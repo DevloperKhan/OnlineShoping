@@ -22,8 +22,16 @@
 
 <title>Online Shopping - ${title}</title>
 
+<script type="text/javascript">
+	window.menu = '${title}';
+</script>
+
+
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Core CSS -->
+<link href="${css}/bootstrap-readable-theam.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -35,36 +43,42 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
 </head>
 
 <body>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navigate.jsp"%>
-	<!-- Navigation -->
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navigate.jsp"%>
+		<!-- Navigation -->
 
-	<!-- Page Content -->
-	<c:if test="${userClickHome == true}">
-		<%@include file="pageContent.jsp"%>
-	</c:if>
-	<c:if test="${userClickAbout == true}">
-		<%@include file="about.jsp"%>
-	</c:if>
-	<c:if test="${userClickContact == true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
-	<!-- page Content loading the Home-->
+		<!-- Page Content -->
+		<div class="content">
+			<c:if test="${userClickHome == true}">
+				<%@include file="pageContent.jsp"%>
+			</c:if>
+			<c:if test="${userClickAbout == true}">
+				<%@include file="about.jsp"%>
+			</c:if>
+			<c:if test="${userClickContact == true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
+			<!-- page Content loading the Home-->
+		</div>
+		<!-- /.container -->
+		<%@include file="./shared/footerBar.jsp"%>
+		<!-- /.container -->
 
-	<!-- /.container -->
-	<%@include file="./shared/footerBar.jsp"%>
-	<!-- /.container -->
+		<!-- jQuery -->
+		<script src="${js}/jquery.js"></script>
 
-	<!-- jQuery -->
-	<script src="${js}/jquery.js"></script>
+		<!-- Bootstrap Core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="${js}/bootstrap.min.js"></script>
-
+		<!-- self Coded JavaScript -->
+		<script src="${js}/myapp.js"></script>
+	</div>
 </body>
 
 </html>
